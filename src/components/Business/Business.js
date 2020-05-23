@@ -28,9 +28,8 @@ class Business extends React.Component {
                         <p>{business.state} {business.zipCode}</p>
                     </div>
                     <div className="Business-reviews">
-                        // TODO: Capitalize the business category, idk if this is how you do it
-                        <h3>{business.category.autocapitalize}</h3>
-                        <h3 className="rating">{business.rating} stars}</h3>
+                        <h3>{business.category}</h3>
+                        <h3 className="rating">{business.rating} stars</h3>
                         <p>{business.reviewCount} reviews</p>
                     </div>
                 </div>
