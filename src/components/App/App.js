@@ -5,7 +5,16 @@ import BusinessList from "../BusinessList/BusinessList";
 import SearchBar from "../SearchBar/SearchBar";
 
 function App() {
-  return ();
+  return (
+      <div className="App">
+        <h1>ravenous</h1>
+        <!-- SearchBar component -->
+        <SearchBar/>
+        <!-- BusinessList component -->
+        <BusinessList/>
+      </div>
+
+  );
 }
 
 export default App;
