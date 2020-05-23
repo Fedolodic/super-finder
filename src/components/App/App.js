@@ -1,12 +1,13 @@
 import React from 'react';
 import './App.css';
+
 import BusinessList from "../BusinessList/BusinessList";
 import SearchBar from "../SearchBar/SearchBar";
 
 function App() {
   return (
       <div className="App">
-        <h1>ravenous</h1>
+        <h1>super finder</h1>
         {/*SearchBar component*/}
         <SearchBar/>
         {/*BusinessList component*/}

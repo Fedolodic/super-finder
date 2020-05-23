@@ -5,7 +5,7 @@ const sortByOptions = {
     'Best Match': 'best_match',
     'Highest Rated': 'rating',
     'Most Reviewed': 'review_count'
-}
+};
 
 class SearchBar extends React.Component {
     // Purpose is to dynamically create the list items needed to display the sort options (Best Match, Highest Rated,
@@ -35,7 +35,7 @@ class SearchBar extends React.Component {
                     <a>Let's Go</a>
                 </div>
             </div>
-        )
+        );
     }
 }
 
