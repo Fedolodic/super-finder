@@ -11,3 +11,29 @@ const business = {
     rating: 4.5,
     reviewCount: 90
 };
+
+class Business extends React.Component {
+    render() {
+        return (
+            <div className="Business">
+                <div className="image-container">
+                    <img src={business.imageSrc} alt=''/>
+                </div>
+                <h2>{business.name}</h2>
+                <div className="Business-information">
+                    <div className="Business-address">
+                        <p>{business.address}</p>
+                        <p>{business.city}</p>
+                        <p>{business.state} {business.zipcode}</p>
+                    </div>
+                    <div className="Business-reviews">
+                        // TODO: Capitalize the business category, idk if this is how you do it
+                        <h3>{business.category.autocapitalize}</h3>
+                        <h3 className="rating">{business.rating} stars}</h3>
+                        <p>{business.reviewCount} reviews</p>
+                    </div>
+                </div>
+            </div>
+        )
+    }
+}
