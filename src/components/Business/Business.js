@@ -25,7 +25,7 @@ class Business extends React.Component {
                     <div className="Business-address">
                         <p>{business.address}</p>
                         <p>{business.city}</p>
-                        <p>{business.state} {business.zipcode}</p>
+                        <p>{business.state} {business.zipCode}</p>
                     </div>
                     <div className="Business-reviews">
                         // TODO: Capitalize the business category, idk if this is how you do it
@@ -38,3 +38,5 @@ class Business extends React.Component {
         )
     }
 }
+
+export default Business;
