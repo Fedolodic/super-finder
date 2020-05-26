@@ -7,9 +7,9 @@ class BusinessList extends React.Component {
     render() {
         return (
             <div className="BusinessList">
-                {
-                    this.props.businesses.map(business => <Business business={business}/>)
-                }
+                {/*Iterate through businesses array from parent component,
+                and return Business components*/}
+                {this.props.businesses.map(business => <Business business={business}/>)}
             </div>
         );
     }

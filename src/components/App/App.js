@@ -16,7 +16,7 @@ const business = {
     reviewCount: 90
 };
 
-const businessess = [
+const businesses = [
     business,
     business,
     business,
@@ -25,19 +25,19 @@ const businessess = [
     business
 ];
 
+/*This is the container component, in this case, a function component*/
 function App() {
-  return (
-      <div className="App">
-        <h1>super finder</h1>
-        {/*SearchBar component*/}
-        <SearchBar/>
-        {/*
-        BusinessList component
-        <ComponentName propName={value}/>
-        */}
-        <BusinessList businesses={businessess}/>
-      </div>
-  );
+    return (
+        <div className="App">
+            <h1>super finder</h1>
+            {/*SearchBar component*/}
+            <SearchBar/>
+            {/*BusinessList component
+            <ComponentName propName={value}/>
+            pass information to child component*/}
+            <BusinessList businesses={businesses}/>
+        </div>
+    );
 }
 
 export default App;
