@@ -31,8 +31,11 @@ function App() {
         <h1>super finder</h1>
         {/*SearchBar component*/}
         <SearchBar/>
-        {/*BusinessList component*/}
-        <BusinessList/>
+        {/*
+        BusinessList component
+        <ComponentName propName={value}/>
+        */}
+        <BusinessList businesses={businessess}/>
       </div>
   );
 }
