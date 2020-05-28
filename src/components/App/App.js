@@ -36,7 +36,7 @@ class App extends React.Component {
             <div className="App">
                 <h1>super finder</h1>
                 {/*SearchBar component*/}
-                <SearchBar/>
+                <SearchBar searchYelp={this.searchYelp}/>
                 {/*BusinessList component
             <ComponentName propName={value}/>
             pass information to child component*/}
