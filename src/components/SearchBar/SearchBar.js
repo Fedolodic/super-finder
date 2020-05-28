@@ -51,6 +51,12 @@ class SearchBar extends React.Component {
         });
     }
 
+    handleSearch(event) {
+        this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
+        /*Prevents the default action of clicking a link from triggering at the end of the method.*/
+        event.preventDefault()
+    }
+
     /*Purpose is to dynamically create the list items needed to display the sort options (Best Match, Highest Rated,
     Most Reviewed). This is to help future proof against potential changes to the Yelp API.
     This method will be used when building the structure of the search bar component.
