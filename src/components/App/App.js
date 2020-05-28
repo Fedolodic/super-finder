@@ -26,18 +26,24 @@ const businesses = [
 ];
 
 /*This is the container component, in this case, a function component*/
-function App() {
-    return (
-        <div className="App">
-            <h1>super finder</h1>
-            {/*SearchBar component*/}
-            <SearchBar/>
-            {/*BusinessList component
+class App extends React.Component {
+    searchYelp(term, location, sortBy) {
+        console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
+    }
+
+    render() {
+        return (
+            <div className="App">
+                <h1>super finder</h1>
+                {/*SearchBar component*/}
+                <SearchBar/>
+                {/*BusinessList component
             <ComponentName propName={value}/>
             pass information to child component*/}
-            <BusinessList businesses={businesses}/>
-        </div>
-    );
+                <BusinessList businesses={businesses}/>
+            </div>
+        );
+    }
 }
 
 export default App;
