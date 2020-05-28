@@ -53,6 +53,8 @@ class SearchBar extends React.Component {
         });
     }
 
+    /*searchYelp() will print a message to the console, simulating a search. This will only happen when the "let's Go"
+      button is clicked, which will be handled by handleSearch()*/
     handleSearch(event) {
         this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
         /*Prevents the default action of clicking a link from triggering at the end of the method.*/
@@ -94,7 +96,7 @@ class SearchBar extends React.Component {
                     <input placeholder="Where?" onChange={this.handleLocationChange}/>
                 </div>
                 <div className="SearchBar-submit">
-                    <a>Let's Go</a>
+                    <a onClick={this.handleSearch}>Let's Go</a>
                 </div>
             </div>
         );
