@@ -13,7 +13,6 @@ class SearchBar extends React.Component {
             sortBy: 'best_match'
         };
 
-        this.handleSortByChange = this.handleSortByChange.bind(this);
         this.handleTermChange = this.handleTermChange.bind(this);
         this.handleLocationChange = this.handleLocationChange.bind(this);
         this.handleSearch = this.handleSearch.bind(this);
@@ -37,7 +36,7 @@ class SearchBar extends React.Component {
     /*Sets the state of a sorting option. Useful when communicating with the Yelp API in the future.*/
     handleSortByChange(sortByOption) {
         this.setState({
-           sortBy: sortByOption
+            sortBy: sortByOption
         });
     }
 
@@ -58,7 +57,7 @@ class SearchBar extends React.Component {
     handleSearch(event) {
         this.props.searchYelp(this.state.term, this.state.location, this.state.sortBy);
         /*Prevents the default action of clicking a link from triggering at the end of the method.*/
-        event.preventDefault()
+        event.preventDefault();
     }
 
     /*Purpose is to dynamically create the list items needed to display the sort options (Best Match, Highest Rated,
@@ -75,10 +74,11 @@ class SearchBar extends React.Component {
     renderSortByOptions() {
         return Object.keys(this.sortByOptions).map(sortByOption => {
             let sortByOptionValue = this.sortByOptions[sortByOption];
-            return <li
-                key={sortByOptionValue}
-                className={this.getSortByClass(sortByOptionValue)}
-                onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>{sortByOption}</li>
+            return <li key={sortByOptionValue}
+                       className={this.getSortByClass(sortByOptionValue)}
+                       onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>
+                {sortByOption}
+            </li>
         });
     };
 
