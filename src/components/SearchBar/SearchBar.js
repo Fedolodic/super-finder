@@ -19,6 +19,7 @@ class SearchBar extends React.Component {
         };
     }
 
+    /*Returns the current CSS class for a sorting option. Useful in providing visual feedback to users.*/
     getSortByClass(sortByOption) {
         if (this.state.sortBy === sortByOption) {
             return 'active';
@@ -27,9 +28,16 @@ class SearchBar extends React.Component {
         }
     }
 
+    /*Sets the state of a sorting option. Useful when communicating with the Yelp API in the future.*/
+    handleSortByChange(sortByOption) {
+        this.setState({
+           sortBy: sortByOption
+        });
+    }
+
     /*Purpose is to dynamically create the list items needed to display the sort options (Best Match, Highest Rated,
     Most Reviewed). This is to help future proof against potential changes to the Yelp API.
-    This method will be used when building the structure of the search bar component*/
+    This method will be used when building the structure of the search bar component.*/
     renderSortByOptions() {
         return Object.keys(this.sortByOptions).map(sortByOption => {
             let sortByOptionValue = this.sortByOptions[sortByOption];
