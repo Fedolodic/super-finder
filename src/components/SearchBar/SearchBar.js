@@ -5,8 +5,8 @@ class SearchBar extends React.Component {
     constructor(props) {
         super(props);
         /*term => search term located in the search input
-        * location => location to search near from the location input
-        * sortBy => selected sorting option to use*/
+          location => location to search near from the location input
+          sortBy => selected sorting option to use*/
         this.state = {
             term: '',
             location: '',
@@ -37,11 +37,15 @@ class SearchBar extends React.Component {
 
     /*Purpose is to dynamically create the list items needed to display the sort options (Best Match, Highest Rated,
     Most Reviewed). This is to help future proof against potential changes to the Yelp API.
-    This method will be used when building the structure of the search bar component.*/
+    This method will be used when building the structure of the search bar component.
+
+    className={this.getSortByClass(sortByOptionValue)} will conditionally style each sort by option, displaying to the
+    user which sorting option is currently selected.
+    */
     renderSortByOptions() {
         return Object.keys(this.sortByOptions).map(sortByOption => {
             let sortByOptionValue = this.sortByOptions[sortByOption];
-            return <li key={sortByOptionValue}>{sortByOption}</li>
+            return <li key={sortByOptionValue} className={this.getSortByClass(sortByOptionValue)}>{sortByOption}</li>
         });
     };
 
