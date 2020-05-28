@@ -13,8 +13,10 @@ class SearchBar extends React.Component {
             sortBy: 'best_match'
         };
 
+        this.handleSortByChange = this.handleSortByChange.bind(this);
         this.handleTermChange = this.handleTermChange.bind(this);
         this.handleLocationChange = this.handleLocationChange.bind(this);
+        this.handleSearch = this.handleSearch.bing(this);
 
         this.sortByOptions = {
             'Best Match': 'best_match',
