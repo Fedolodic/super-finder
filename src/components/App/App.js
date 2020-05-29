@@ -7,6 +7,16 @@ import Yelp from "../../util/Yelp";
 
 /*This is the container component, in this case, a function component*/
 class App extends React.Component {
+    constructor() {
+        super ();
+
+        this.state = {
+            businesses: []
+        };
+
+        this.searchYelp.bind(this);
+    }
+
     searchYelp(term, location, sortBy) {
         console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
     }
