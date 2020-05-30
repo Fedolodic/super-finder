@@ -1,8 +1,6 @@
-import React from 'react';
-
 const apiKey = 'huPlqIKAyngHBkBTwYGMC_gF0zWhnXuO1dfZ-ircpjaJKUGVCJUuDhhhnzvO66KVJSAWFJ2aEiMCPHVcE8nlJL3C2CC0Jyda8TlQKYn_iMJMJKkZQdP7CqpCQDvQXnYx';
 
-export default class Yelp extends React.Component {
+const Yelp = {
     search(term, location, sortBy) {
         /*fetch() won't function correctly due to CORS restrictions. We can bypass this restriction
           with an API called CORS Anywhere. CORS Anywhere will take requests sent to its API endpoint,
@@ -28,7 +26,7 @@ export default class Yelp extends React.Component {
                             city: business.location.city,
                             state: business.location.state,
                             zipCode: business.location.zip_code,
-                            category: business.categories.title,
+                            category: business.categories[0].title,
                             rating: business.rating,
                             reviewCount: business.review_count
                         }
@@ -38,3 +36,5 @@ export default class Yelp extends React.Component {
         );
     }
 };
+
+export default Yelp;

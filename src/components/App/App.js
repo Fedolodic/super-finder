@@ -3,22 +3,27 @@ import './App.css';
 
 import BusinessList from "../BusinessList/BusinessList";
 import SearchBar from "../SearchBar/SearchBar";
+
 import Yelp from "../../util/Yelp";
 
 /*This is the container component, in this case, a function component*/
 class App extends React.Component {
-    constructor() {
-        super ();
+    constructor(props) {
+        super (props);
 
         this.state = {
             businesses: []
         };
 
-        this.searchYelp.bind(this);
+        this.searchYelp = this.searchYelp.bind(this);
     }
 
     searchYelp(term, location, sortBy) {
-        console.log(`Searching Yelp with ${term}, ${location}, ${sortBy}`);
+        Yelp.search(term, location, sortBy).then(businesses => {
+            this.setState({
+                businesses: businesses
+            });
+        });
     }
 
     render() {
@@ -30,7 +35,7 @@ class App extends React.Component {
                 {/*BusinessList component
             <ComponentName propName={value}/>
             pass information to child component*/}
-                <BusinessList businesses={businesses}/>
+                <BusinessList businesses={this.state.businesses}/>
             </div>
         );
     }
